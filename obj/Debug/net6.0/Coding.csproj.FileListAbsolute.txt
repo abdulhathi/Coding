@@ -1,0 +1,15 @@
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/Coding
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/Coding.deps.json
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/Coding.runtimeconfig.json
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/Coding.dll
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/ref/Coding.dll
+/Users/abdulhathi/Development/Coding/bin/Debug/net6.0/Coding.pdb
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.csproj.AssemblyReference.cache
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.GeneratedMSBuildEditorConfig.editorconfig
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.AssemblyInfoInputs.cache
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.AssemblyInfo.cs
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.csproj.CoreCompileInputs.cache
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.dll
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/ref/Coding.dll
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.pdb
+/Users/abdulhathi/Development/Coding/obj/Debug/net6.0/Coding.genruntimeconfig.cache
