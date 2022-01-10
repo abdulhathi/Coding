@@ -1,0 +1,61 @@
+Bit Manipulation: Interview Questions and Practice Problems
+
+Coding Freak
+
+
+Bit manipulation�is the act of algorithmically manipulating bits or other pieces of data shorter than a word. Computer programming tasks that require bit manipulation include low-level device control, error detection and correction algorithms, data compression, encryption algorithms, and optimization. For most other tasks, modern programming languages allow the programmer to work directly with abstractions instead of bits that represent those abstractions. Source code that does bit manipulation makes use of the bitwise operations: AND, OR, XOR, NOT, and bit shifts.
+Bit manipulation, in�some cases, can obviate or reduce the need to loop over a data structure and can give many-fold speed-ups, as bit manipulations are processed in parallel, but the code can become more difficult to write and maintain.
+In this post, we will discuss a few such interesting bit manipulation hacks and interview questions:
+
+1. Bit Hacks � Part 1 (Basic)
+2. Bit Hacks � Part 2 (Playing with k�th bit)
+3. Bit Hacks � Part 3 (Playing with the rightmost set bit of a number)
+4. Bit Hacks � Part 4 (Playing with letters of the English alphabet)
+5. Bit Hacks � Part 5 (Find the absolute value of an integer without branching)
+6. Find the total number of bits needed to be flipped
+7. Brian Kernighan�s Algorithm to count set bits in an integer
+8. Round up to the next highest power of 2
+9. Round up to the previous power of 2
+10. Compute the parity of a number using a lookup table
+11. Count set bits using a lookup table
+12. Multiply 16-bit integers using an 8-bit multiplier
+13. Swap individual bits at a given position in an integer
+14. Check if a number is a power of 4 or not
+15. Check if a number is a power of 8 or not
+16. Reverse bits of an integer
+17. Swap two bits at a given position in an integer
+18. Print binary representation of a number
+19. Add binary representation of two integers
+20. Swap adjacent bits of a number
+21. Check if adjacent bits are set in the binary representation of a number
+22. Reverse bits of an integer using a lookup table
+23. Circular shift on the binary representation of an integer by `k` positions
+24. Find XOR of two numbers without using the XOR operator
+25. Print all distinct subsets of a given set
+26. Find the missing number in an array
+27. Find the missing number in an array without using any extra space
+28. Find the odd occurring element in an array in a single traversal
+29. Find two odd occurring elements in an array without using any extra space
+30. Find all odd occurring elements in an array having a limited range of elements
+31. Find the duplicate element in a limited range array
+32. Find two duplicate elements in a limited range array (using XOR)
+33. Find the missing number and duplicate elements in an array
+34. Check if binary representation of a number is palindrome or not
+35. Efficiently implement power function
+36. Find the odd occurring element in an array in logarithmic time
+37. Huffman Coding Compression Algorithm
+38. XOR Linked List � Overview and Implementation in C/C++
+39. Generate the power set of a given set
+40. Swap two numbers without using a third variable | 5 methods
+41. Find the square of a number without using the multiplication and division operator
+42. Perform division of two numbers without using division operator
+43. Generate 0 and 1 with 75% and 25% probability
+44. Determine if two integers are equal without using comparison and arithmetic operators
+45. Compute modulus division without division and modulo operator
+46. Single line expressions to swap two integers in Java
+47. Find minimum or maximum of two integers without using branching
+48. Conditionally negate a value without branching
+49. Solve a given set of problems without using multiplication or division operators
+50. Generate binary numbers between 1 to `n` using a queue
+Thank you.
+
