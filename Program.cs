@@ -51,29 +51,46 @@
 // Console.Write("Enter the number to find in an Array : ");
 // new LinearSearch().Search(Convert.ToInt32(Console.ReadLine()));
 
-Console.WriteLine($"Iterative Binary search : {new BinarySearch().IterativeBinarySearch(18)} ");
-Console.WriteLine($"Recursive Binary search : {new BinarySearch().RecursiveBinarySearch(25)} ");
+// Console.WriteLine($"Iterative Binary search : {new BinarySearch().IterativeBinarySearch(18)} ");
+// Console.WriteLine($"Recursive Binary search : {new BinarySearch().RecursiveBinarySearch(25)} ");
 
-var arrOprations = new GetSetSumAvgMax();
-arrOprations.GetIndex(15);
-arrOprations.SetIndex(150,2);
-arrOprations.PrintArray();
-Console.WriteLine($"Sum : {arrOprations.Sum()}");
-Console.WriteLine($"Max : {arrOprations.Max()}");
-Console.WriteLine($"Min : {arrOprations.Min()}");
-Console.WriteLine($"Avg : {arrOprations.Avg()}");
+// var arrOprations = new GetSetSumAvgMax();
+// arrOprations.GetIndex(15);
+// arrOprations.SetIndex(150,2);
+// arrOprations.PrintArray();
+// Console.WriteLine($"Sum : {arrOprations.Sum()}");
+// Console.WriteLine($"Max : {arrOprations.Max()}");
+// Console.WriteLine($"Min : {arrOprations.Min()}");
+// Console.WriteLine($"Avg : {arrOprations.Avg()}");
 
-var reverseArray = new ReverseAnArray();
-reverseArray.Reverse();
-reverseArray.PrintArray();
+// var reverseArray = new ReverseAnArray();
+// reverseArray.Reverse();
+// reverseArray.PrintArray();
 
-var insertArray = new InsertAnElement();
-insertArray.InsertInSortedArray(18);
-insertArray.PrintArray();
+// var insertArray = new InsertAnElement();
+// insertArray.InsertInSortedArray(18);
+// insertArray.PrintArray();
 
-var isSorted = new ArrayIsSorted();
-Console.WriteLine(isSorted.CheckArrayIsSorted());
+// var isSorted = new ArrayIsSorted();
+// Console.WriteLine(isSorted.CheckArrayIsSorted());
 
-var moveAllNegativeOnLeft = new MoveAllNegativeOnLeft();
-moveAllNegativeOnLeft.MoveAllNegativeToLeftAndPostiveToRight();
-moveAllNegativeOnLeft.PrintArray();
+// var moveAllNegativeOnLeft = new MoveAllNegativeOnLeft();
+// moveAllNegativeOnLeft.MoveAllNegativeToLeftAndPostiveToRight();
+// moveAllNegativeOnLeft.PrintArray();
+
+// new MergingTwoArray().Merge();
+// new UnionTwoArray().UnionUnsortedArray();
+// new UnionTwoArray().UnionSortedArray();
+// new FindMissingElements().PrintMissingNums(); Console.WriteLine();
+// new FindMissingElemsInUnSorted().FindMissingElems(); Console.WriteLine();
+
+// new FindDuplicateNums().FindDuplicate();
+// new FindDuplicateNums().FindingDuplicate();
+// new FindDuplicatsInSortedArray().FindDuplicates();
+// new FindThePairWithSumK().FindPairWithSumK(10);
+// new FindThePairWithSumKInSorted().FindThePairInSorted(10);
+// new FindMinAndMaxInAnArray().FindMinAndMaxInASingleScan();
+
+// String
+ChangeCaseOfAString.ChangeCase();
+ReverseAString.Run();

@@ -5,7 +5,7 @@ public class InsertAnElement {
     int[] arr = { 4,8,13,16,20,25,28,33, -1, -1 };
     public void InsertInSortedArray(int num) {
         int i = 7;
-        while(num < arr[i])
+        while(i >= 0 && num < arr[i])
         {
             arr[i+1] = arr[i];
             i--;
