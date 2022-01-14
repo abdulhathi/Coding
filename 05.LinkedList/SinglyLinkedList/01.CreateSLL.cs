@@ -6,6 +6,8 @@ public class CreateSLL {
         ListNode.Print(p);
     }
     public static ListNode Create(int[] arr) {
+        if(arr.Length == 0)
+            return null;
         ListNode p = new ListNode(arr[0]);
         ListNode first = p;
         for(int i = 1; i < arr.Length; i++) {

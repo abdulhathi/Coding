@@ -4,7 +4,8 @@ public class SearchAndMoveToHead {
     public SearchAndMoveToHead() {
         ListNode p = CreateSLL.Create(new int[] {3,5,7,10,15});
         var result = SearchKeyMoveToHead(p, 10);
-        ListNode.Print(result);
+        if(result is not null)
+            ListNode.Print(result);
     }
     public ListNode SearchKeyMoveToHead(ListNode p, int key) {
         ListNode root = p;

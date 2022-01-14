@@ -13,4 +13,12 @@ public class ListNode {
             p = p.next;
         }
     }
+    public static void PrintCSLL(ListNode p) {
+        ListNode head = p;
+        do {
+            Console.Write($"{p.val}->");
+            p = p.next;
+        }
+        while(p != head);
+    }
 }

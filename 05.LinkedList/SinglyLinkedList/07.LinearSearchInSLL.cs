@@ -3,8 +3,9 @@ using System;
 public class LinearSearchInSLL {
     public LinearSearchInSLL() {
         ListNode p = CreateSLL.Create(new int[] {3,5,7,10,15});
-        Console.WriteLine($"Recursive search : {RecursiveLinearSearch(p,15).val}");
-        Console.WriteLine($"Iterative search : {IterativeLinearSearch(p,15).val}");
+        ListNode recursiveResult = RecursiveLinearSearch(p,15);
+        Console.WriteLine($"Recursive search : {recursiveResult!.val}");
+        Console.WriteLine($"Iterative search : {IterativeLinearSearch(p,15)!.val}");
     }
     public ListNode RecursiveLinearSearch(ListNode p, int key) {
         if(p == null)
