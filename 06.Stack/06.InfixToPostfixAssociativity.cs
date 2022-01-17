@@ -31,8 +31,10 @@ public class InfixToPostfixAssociativity {
         foreach(var exp in expression) {
             if(precedences.ContainsKey(exp)) {
                 while(stack.Count > 0 && precedences[stack.Peek()].InStack >= precedences[exp].OutStack) {
-                    if(stack.Peek() == '(')
+                    if(stack.Peek() == '(') {
                         stack.Pop();
+                        break;
+                    }
                     else
                         postfix += stack.Pop();
                 }
