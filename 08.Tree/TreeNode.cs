@@ -8,4 +8,19 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+    public static void PrintLevelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+        TreeNode current = null;
+        while(queue.Count > 0) {
+            current = queue.Dequeue();
+            if(current != null) {
+                Console.Write(current.val+",");
+                queue.Enqueue(current.left);
+                queue.Enqueue(current.right);
+            }
+            // else
+            //     Console.Write("null,");
+        }
+    }
 }
