@@ -8,6 +8,11 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+    public TreeNode(int? val = null, int? left = null, int? right = null) {
+        this.val = val.Value;
+        this.left = left.HasValue ? new TreeNode(left.Value) : null;
+        this.right = right.HasValue ? new TreeNode(right.Value) : null;
+    }
     public static void PrintLevelOrder(TreeNode root) {
         Queue<TreeNode> queue = new Queue<TreeNode>();
         queue.Enqueue(root);
@@ -19,8 +24,13 @@ public class TreeNode {
                 queue.Enqueue(current.left);
                 queue.Enqueue(current.right);
             }
-            // else
-            //     Console.Write("null,");
+        }
+    }
+    public static void PrintPostOrder(TreeNode root) {
+        if(root != null) {
+            PrintPostOrder(root.left);
+            PrintPostOrder(root.right);
+            Console.Write(root.val+",");
         }
     }
 }
