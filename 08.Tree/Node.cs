@@ -5,11 +5,11 @@ public class Node
     public Node left;
     public Node right;
 
-    public Node(int key)
+    public Node(int key, Node left = null, Node right = null)
     {
         this.data = key;
-        this.left = null;
-        this.right = null;
+        this.left = left;
+        this.right = right;
     }
     public static Node Create(int?[] arr) {
         int i = 0;
@@ -35,5 +35,18 @@ public class Node
             }
         }
         return root;
+    }
+    public static void Print(Node root) {
+        Queue<Node> queue = new Queue<Node>();
+        queue.Enqueue(root);
+        Node current = null;
+        while(queue.Count > 0) {
+            current = queue.Dequeue();
+            if(current != null) {
+                Console.Write(current.data+",");
+                queue.Enqueue(current.left);
+                queue.Enqueue(current.right);
+            }
+        }
     }
 }
