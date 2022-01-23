@@ -13,6 +13,31 @@ public class TreeNode {
         this.left = left.HasValue ? new TreeNode(left.Value) : null;
         this.right = right.HasValue ? new TreeNode(right.Value) : null;
     }
+    public static TreeNode Create(int?[] arr) {
+        int i = 0;
+        if(arr == null || arr.Length == 0 || arr[i] == null)
+            return null;
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        TreeNode root = new TreeNode(arr[i++].Value);
+        queue.Enqueue(root);
+        TreeNode current = null;
+        while(queue.Count > 0) {
+            current = queue.Dequeue();
+            if(current != null) {
+                if(arr.Length > i) {
+                    current.left = arr[i].HasValue ? new TreeNode(arr[i].Value) : null;
+                    queue.Enqueue(current.left);
+                    i++;
+                }
+                if(arr.Length > i) {
+                    current.right = arr[i].HasValue ? new TreeNode(arr[i].Value) : null;
+                    queue.Enqueue(current.right);
+                    i++;
+                }
+            }
+        }
+        return root;
+    }
     public static void PrintLevelOrder(TreeNode root) {
         Queue<TreeNode> queue = new Queue<TreeNode>();
         queue.Enqueue(root);
@@ -21,9 +46,13 @@ public class TreeNode {
             current = queue.Dequeue();
             if(current != null) {
                 Console.Write(current.val+",");
-                queue.Enqueue(current.left);
-                queue.Enqueue(current.right);
+                if(current.left != null || current.right != null) {
+                    queue.Enqueue(current.left);
+                    queue.Enqueue(current.right);
+                }
             }
+            else
+                Console.Write("null,");
         }
     }
     public static void PrintPostOrder(TreeNode root) {
