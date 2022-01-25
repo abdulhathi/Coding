@@ -13,17 +13,41 @@ public class DepthFirstSearchInGraph {
         adjList.Add(7, new int[] {5});
 
         HashSet<int> visited = new HashSet<int>();
+        Console.WriteLine();
         DFS(5, adjList, visited);
-        foreach(var key in adjList.Keys)
-            if(!visited.Contains(key))
-                DFS(key, adjList, visited);
+        Console.WriteLine();
+        DFSInIterative(5, adjList);
     }
+    // Space complexity : O(n)
+    // Time complexity  : O(V + E) = O(n)
     public void DFS(int vertexU, Dictionary<int, int[]> adjList, HashSet<int> visited) {
         Console.Write(vertexU+",");
         visited.Add(vertexU);
         foreach(var vertexV in adjList[vertexU]) {
             if(!visited.Contains(vertexV))
                 DFS(vertexV, adjList, visited);
+        }
+    }
+    public void DFSInIterative(int vertexU, Dictionary<int, int[]> adjList) {
+        HashSet<int> visited = new HashSet<int>();
+        Stack<int> stack = new Stack<int>();
+        Console.Write(vertexU+",");
+        stack.Push(vertexU);
+        visited.Add(vertexU); bool noUnVisited = true;
+        while(stack.Count > 0) {
+            vertexU = stack.Peek();
+            noUnVisited = true;
+            foreach(var vertexV in adjList[vertexU]) {
+                if(!visited.Contains(vertexV)) {
+                    Console.Write(vertexV+",");
+                    stack.Push(vertexV);
+                    visited.Add(vertexV);
+                    noUnVisited = false;
+                    break;
+                }
+            }
+            if(noUnVisited)
+                stack.Pop();
         }
     }
 }
