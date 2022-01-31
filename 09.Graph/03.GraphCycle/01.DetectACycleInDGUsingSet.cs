@@ -2,12 +2,14 @@ using System;
 
 public class DetectACycleInDG {
     public DetectACycleInDG() {
-        Dictionary<int, int[]> adjList = new Dictionary<int, int[]>();
-        adjList.Add(1, new int[] {2,3,4});
-        adjList.Add(4, new int[] {5});
-        adjList.Add(5, new int[] {6});
-        // adjList.Add(6, new int[] {4});
-        adjList.Add(2, new int[] {3});
+        Dictionary<int, HashSet<int>> adjList = new Dictionary<int, HashSet<int>>();
+        // adjList.Add(1, new int[] {2,3,4});
+        // adjList.Add(4, new int[] {5});
+        // adjList.Add(5, new int[] {6});
+        // adjList.Add(2, new int[] {3});
+        for(int i = 0; i < 4; i++)
+            adjList.Add(i, new HashSet<int>());
+        adjList[0].Add(1); adjList[1].Add(2); adjList[2].Add(3); adjList[3].Add(3);
 
         HashSet<int> visiting = new HashSet<int>();       
         HashSet<int> visited = new HashSet<int>();
@@ -20,7 +22,7 @@ public class DetectACycleInDG {
     }
     // Time Complexity  : O(V+E)
     // Space Complexity : O(V)
-    public bool DetectCycleInDG(int vertexU, Dictionary<int, int[]> adjList, HashSet<int> visiting, HashSet<int> visited) {
+    public bool DetectCycleInDG(int vertexU, Dictionary<int, HashSet<int>> adjList, HashSet<int> visiting, HashSet<int> visited) {
         visiting.Add(vertexU);
         if(adjList.ContainsKey(vertexU)) {
             foreach(var vertexV in adjList[vertexU]) {
