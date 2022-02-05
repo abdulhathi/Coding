@@ -10,7 +10,7 @@ public class TransitiveClousre {
           0 | 1 1 1 1
           1 | 1 1 1 1
           2 | 1 1 1 1
-          3 | 
+          3 | 0 0 0 1
     */
     public TransitiveClousre() {
         int noOfVertices = 4;

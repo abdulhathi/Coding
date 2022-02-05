@@ -9,6 +9,7 @@ public class SortedSetUnitTest {
     public void SortedSet() {
         SortedSet<int> sortedSet = new SortedSet<int>();
         sortedSet.Add(1);
+        sortedSet.Add(1);
         sortedSet.Add(10);
         sortedSet.Add(112);
         sortedSet.Add(11232);

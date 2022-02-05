@@ -2,17 +2,18 @@ using System;
 
 public class BridgesInAGraph {
     public BridgesInAGraph() {
-        char[][] edges = {
-            new char[] {'A','B'}, new char[] {'A','C'}, new char[] {'B','C'}, new char[] {'B','D'},
-        };
-
-        var result = FindAllBridgesInGraph('B', edges);
-        Console.WriteLine(string.Join(",", result));
+        // char[][] edges = {
+        //     new char[] {'A','B'}, new char[] {'A','C'}, new char[] {'B','C'}, new char[] {'B','D'},
+        // };
+        char[][] edges = { new char[] {'A','B'}, new char[] {'B','C'} };
+        var bridges = FindAllBridgesInGraph('B', edges);
+        foreach(var bridge in bridges)
+            Console.Write($"({bridge[0]},{bridge[1]}), ");
     }
-    public Dictionary<char, char> FindAllBridgesInGraph(char source, char[][] edges) {
+    public IList<char[]> FindAllBridgesInGraph(char source, char[][] edges) {
         var adjList = new Dictionary<char, HashSet<char>>();
-        var timeMap = new Dictionary<char, (int VisitTime, int LowTime, char Parent)>();
-        var bridges = new Dictionary<char, char>();
+        var timeMap = new Dictionary<char, (int VisitTime, int LowTime, char? Parent)>();
+        var bridges = new List<char[]>();
         var time = 0;
 
         foreach(var edge in edges) {
@@ -24,10 +25,10 @@ public class BridgesInAGraph {
             adjList[edge[1]].Add(edge[0]);
         }
 
-        DFS(source, ' ');
+        DFS(source, null);
         return bridges;
 
-        void DFS(char vertexU, char parent) {
+        void DFS(char vertexU, char? parent) {
             timeMap.Add(vertexU, (time, time, parent));
             time++;
             foreach(var vertexV in adjList[vertexU]) {
@@ -41,7 +42,7 @@ public class BridgesInAGraph {
                     }
                 }
                 if(timeMap[vertexU].VisitTime < timeMap[vertexV].LowTime) 
-                    bridges.Add(vertexU, vertexV);
+                    bridges.Add(new char[] {vertexU, vertexV});
             }
         }
     }

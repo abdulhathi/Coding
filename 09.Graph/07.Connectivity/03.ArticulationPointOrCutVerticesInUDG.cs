@@ -11,19 +11,20 @@ using System.Collections.Generic;
 
 public class ArticulationPointOrCutVerticesInUDG {
     public ArticulationPointOrCutVerticesInUDG() {
-        char[][] edges = {
-            new char[] {'A','B'}, new char[] {'B','C'}, new char[] {'C','D'}, 
-            new char[] {'A','C'}, new char[] {'D','E'}, new char[] {'E','G'}, 
-            new char[] {'E','F'}, new char[] {'G','F'}, new char[] {'F','H'},
-        };
+        // char[][] edges = {
+        //     new char[] {'A','B'}, new char[] {'B','C'}, new char[] {'C','D'}, 
+        //     new char[] {'A','C'}, new char[] {'D','E'}, new char[] {'E','G'}, 
+        //     new char[] {'E','F'}, new char[] {'G','F'}, new char[] {'F','H'},
+        // };
+        char[][] edges = { new char[] {'A','B'}, new char[] {'B','C'} };
 
-        var result = FindAPs('D', edges);
+        var result = FindAPs('B', edges);
         Console.WriteLine(string.Join(",", result));
     }
 
     public HashSet<char> FindAPs(char source, char[][] edges) {
         var adjList = new Dictionary<char, HashSet<char>>();
-        var timeMap = new Dictionary<char, (int VisitTime, int LowTime, char Parent, int ChildCount)>();
+        var timeMap = new Dictionary<char, (int VisitTime, int LowTime, char? Parent, int ChildCount)>();
         var aps  = new HashSet<char>();
         var time = 0;
 
@@ -36,13 +37,13 @@ public class ArticulationPointOrCutVerticesInUDG {
             adjList[edge[1]].Add(edge[0]);
         }
 
-        DFS(source, ' ');
+        DFS(source, null);
 
-        void DFS(char vertexU, char parent) {
+        void DFS(char vertexU, char? parent) {
             timeMap.Add(vertexU, (time, time, parent, 0));
             time++;
             foreach(var vertexV in adjList[vertexU]) {
-                if(timeMap[vertexU].Parent == ' ') {
+                if(timeMap[vertexU].Parent == null) {
                     var u = timeMap[vertexU];
                     u.ChildCount++;
                     timeMap[vertexU] = u;
@@ -56,10 +57,11 @@ public class ArticulationPointOrCutVerticesInUDG {
                         timeMap[vertexU] = u;
                     }
                 }
-                if(timeMap[vertexU].VisitTime <= timeMap[vertexV].LowTime && parent != ' ')
+                if(timeMap[vertexU].VisitTime <= timeMap[vertexV].LowTime) {
+                    if(parent == null && timeMap[vertexU].ChildCount <= 1)
+                        continue;
                     aps.Add(vertexU);
-                if(parent == ' ' && timeMap[vertexU].ChildCount > 1)
-                    aps.Add(vertexU);
+                }
             }
         }
 

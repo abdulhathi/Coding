@@ -2,6 +2,12 @@ using System;
 using System.Collections.Generic;
 
 public class UnionTwoArray {
+    public UnionTwoArray() {
+        Console.Write("Union un sorted array : ");
+        UnionUnsortedArray();
+        Console.Write("Union sorted array : ");
+        UnionSortedArray();
+    }
     // Time Complexity : O(m + (m*n)) => O(m+n^2) = > O(n^2)
     public void UnionUnsortedArray() {
         int[] arr1 = {3,5,10,4,6};

@@ -2,6 +2,9 @@ using System;
 
 public class FindThePairWithSumKInSorted {
     int[] arr = {1,3,4,5,5,6,8,9,10,12,14};
+    public FindThePairWithSumKInSorted() {
+        FindThePairInSorted(10);
+    }
     public void FindThePairInSorted(int k) {
         int i = 0, j = arr.Length - 1;
         while(i < j) {

@@ -1,6 +1,7 @@
 using System;
 
 public class BuildArrayFromPermutation {
+
     public BuildArrayFromPermutation() {
         int[] nums = {0,2,1,5,3,4};
         int[] result = BuildArray(nums);

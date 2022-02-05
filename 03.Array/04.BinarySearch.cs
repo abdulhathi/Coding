@@ -2,6 +2,11 @@ using System;
 
 public class BinarySearch {
     int[] arr = { 4,8,10,15,18,21,24,27,29,33,34,37,39,41,43 };
+
+    public BinarySearch() {
+        Console.WriteLine(IterativeBinarySearch(43));
+        Console.WriteLine(RecursiveBinarySearch(43));
+    }
     
     public int IterativeBinarySearch(int key) {
         int low = 0, high = arr.Length - 1, mid = 0;
