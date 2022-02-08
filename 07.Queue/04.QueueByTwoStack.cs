@@ -17,6 +17,8 @@ public class ImplementQueueByTwoStack {
         }
     }
 }
+// Time Complexity for Enqueue : O(1)
+// Time Complexity for Dequeue : O(n)
 public class QueueByTwoStack<T> {
     Stack<T> enqueue = null;
     Stack<T> dequeue = null;

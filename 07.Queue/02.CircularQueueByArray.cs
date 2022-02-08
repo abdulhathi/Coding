@@ -6,8 +6,15 @@ public class ImplementCircularQueueByArray {
         try {
             for(int i = 1; i < 10; i++)
                 queue.Enqueue(i);
-            Console.WriteLine(queue.Dequeue());
-            queue.Enqueue(11);
+            queue.Enqueue(10);
+        } catch(Exception ex) {
+            Console.WriteLine(ex.Message);
+        }
+
+        try {
+        Console.WriteLine(queue.Dequeue());
+        queue.Enqueue(11);
+        queue.Enqueue(12);
         } catch(Exception ex) {
             Console.WriteLine(ex.Message);
         }

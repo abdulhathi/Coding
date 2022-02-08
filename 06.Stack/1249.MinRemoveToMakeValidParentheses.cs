@@ -15,9 +15,8 @@ public class MinRemoveToMakeValidParentheses {
             else if(s[i] == ')') {
                 if(openParenPos.Count == 0)
                     continue;
-                else {
+                else
                     openParenPos.Pop();
-                }
             }
             sb.Append(s[i]);
         }
