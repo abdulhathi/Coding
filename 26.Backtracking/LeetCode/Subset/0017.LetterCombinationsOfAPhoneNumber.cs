@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 public class LetterCombinationsOfAPhoneNumber {
@@ -6,10 +7,10 @@ public class LetterCombinationsOfAPhoneNumber {
         var combination = LetterCombinations("23");
         Console.WriteLine(string.Join(",", combination));
     }
+    
     public IList<string> LetterCombinations(string digits) {
         var combinations = new List<string>();
-        var newComb = new List<string>();
-        
+        StringBuilder oneComb = new StringBuilder();
         if(string.IsNullOrEmpty(digits))
             return combinations;
         var keyMap = new Dictionary<char, char[]> {
@@ -22,22 +23,19 @@ public class LetterCombinationsOfAPhoneNumber {
             { '8', "tuv".ToCharArray() },
             { '9', "wxyz".ToCharArray() }
         };
-       
-        foreach(var chr in keyMap[digits[0]])
-            combinations.Add(chr.ToString());
-        
-        for(int i = 1; i < digits.Length; i++) {
-            newComb = new List<string>();
-            NewCombination(keyMap[digits[i]], 0);
-            combinations = newComb;
-        }
+
+        BackTracking(0);
         return combinations;
-        
-        void NewCombination(char[] chars, int pos) {
-            if(pos < combinations.Count) {
-                foreach(var chr in chars) 
-                    newComb.Add(combinations[pos] + chr.ToString());
-                NewCombination(chars, pos+1);
+
+        void BackTracking(int pos) {
+            if(pos == digits.Length)
+                combinations.Add(oneComb.ToString());
+            else {
+                foreach(var chr in keyMap[digits[pos]]) {
+                    oneComb.Append(chr);
+                    BackTracking(pos+1);
+                    oneComb.Remove(oneComb.Length-1,1);
+                }
             }
         }
     }
