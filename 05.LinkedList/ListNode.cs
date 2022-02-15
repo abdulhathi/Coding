@@ -9,6 +9,17 @@ public class ListNode {
         this.next = next;
         this.prev = prev;
     }
+    public static ListNode Create(int[] arr) {
+        if(arr.Length == 0)
+            return null;
+        ListNode p = new ListNode(arr[0]);
+        ListNode first = p;
+        for(int i = 1; i < arr.Length; i++) {
+            p.next = new ListNode(arr[i]);
+            p = p.next;
+        }
+        return first;
+    }
     public static void Print(ListNode p) {
         while(p != null) {
             Console.Write(p.val+"->");
