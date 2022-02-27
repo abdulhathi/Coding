@@ -7,9 +7,14 @@ int headerLen = 30;
 if (args != null && args.Count() > 0)
 {
     Console.WriteLine();
-    foreach(var arg in args) {
+    for(int i = 0; i < args.Length; i++) {
         // foreach(var type in Assembly.GetExecutingAssembly().GetTypes())
             // Console.WriteLine(type.Name);
+        var arg = args[i];
+        if(arg.Contains(".")) {
+            arg = arg.Substring(arg.IndexOf(".")+1);
+            // Console.WriteLine(arg);
+        }
         var type = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name.Contains(arg)).FirstOrDefault();
         if(type != null)
             InvokeType(type);
