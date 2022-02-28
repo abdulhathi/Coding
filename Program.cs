@@ -43,6 +43,6 @@ void PrintHeader(string FullName)
     for (int i = 0; i < headerLen - header.Length; i++)
         space += " ";
     string head = string.Format("{0}{1} : ", header, space);
-    Console.Write(head);
+    Console.WriteLine(head);
     Console.ResetColor();
 }

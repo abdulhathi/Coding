@@ -40,7 +40,7 @@
     // "editor.fontFamily": "Cascadia Mono, JetBrains Mono NL, Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12.5,
     "window.zoomLevel": 0.5,
-    "workbench.sideBar.location": "right",
+    "workbench.sideBar.location": "left",
     // "window.autoDetectColorScheme": true,
     "code-runner.runInTerminal": true,
     // Auto suggession off End 
