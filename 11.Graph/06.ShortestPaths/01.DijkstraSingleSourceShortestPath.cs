@@ -3,6 +3,16 @@ using System.Collections.Generic;
 
 public class DijkstraSingleSourceShortestPath
 {
+    /*          B------2------C
+               /             /
+              5             3
+             /             /
+            A-------9------D
+             \              \
+              2              2
+               \              \  
+                E-----3--------F
+    */
     public DijkstraSingleSourceShortestPath() {
         Dictionary<char, Dictionary<char, int>> adjList = new Dictionary<char, Dictionary<char, int>>();
         adjList.Add('A', new Dictionary<char, int>() { {'B',5}, {'D',9}, {'E',2} });

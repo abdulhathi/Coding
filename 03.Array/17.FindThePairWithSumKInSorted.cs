@@ -5,6 +5,7 @@ public class FindThePairWithSumKInSorted {
     public FindThePairWithSumKInSorted() {
         FindThePairInSorted(10);
     }
+    // Time O(n), Space O(1)
     public void FindThePairInSorted(int k) {
         int i = 0, j = arr.Length - 1;
         while(i < j) {

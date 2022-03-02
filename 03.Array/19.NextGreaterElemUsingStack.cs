@@ -30,6 +30,8 @@ public class NextGreaterElemUsingStack {
         FindNextGreaterElemUsingStack(new int[] {4,2,0,3,2,5});
         //{0,1,0,2,1,0,1,3,2,1,2,1});
         //{5, 3, 2, 10, 6, 8 ,1, 4, 12, 7, 4});
+        int freeArea = FindMaxNonHistogramArea(new int[] {4,2,0,3,2,5});
+        Console.WriteLine(freeArea);
     }
     public void FindNextGreaterElemUsingStack(int[] histogram) {
         int sum = 0;
@@ -57,6 +59,48 @@ public class NextGreaterElemUsingStack {
                 return key;
             nextGreaterElemMap[key] = FindParent(nextGreaterElemMap[key]);
             return nextGreaterElemMap[key];
+        }
+    }
+
+    public int FindMaxNonHistogramArea(int[] histogram) {
+        //next greater element map
+        var nge = new Dictionary<int, int>();
+        //last greater element map
+        var lge = new Dictionary<int, int>();
+        var stack = new Stack<int>();
+        int freeArea = 0;
+        // Find the next greater element value from the forward direction
+        for(int i = 0; i < histogram.Length; i++) {
+            nge.Add(i, i);
+            while(stack.Count > 0 && histogram[stack.Peek()] < histogram[i]) {
+                nge[stack.Pop()] = i;
+            }
+            stack.Push(i);
+        }
+
+        // Find the last greater element value from the reverse direction
+        stack = new Stack<int>();
+        for(int i = histogram.Length-1; i >= 0; i--) {
+            lge.Add(i, i);
+            while(stack.Count > 0 && histogram[stack.Peek()] < histogram[i]) {
+                lge[stack.Pop()] = i;
+            }
+            stack.Push(i);
+        }
+        // Find the non histogram maximum area
+        for(int i = 0; i < histogram.Length; i++) {
+            freeArea += Math.Abs(Math.Min(FindParentValue(i,nge), FindParentValue(i,lge)) - histogram[i]);
+        }
+        return freeArea;
+
+        int FindParentValue(int child, Dictionary<int, int> map) {
+            return histogram[FindParent(child, map)];
+        }
+        int FindParent(int child, Dictionary<int, int> map) {
+            if(child == map[child])
+                return map[child];
+            map[child] = FindParent(map[child], map);
+            return map[child];
         }
     }
 }
