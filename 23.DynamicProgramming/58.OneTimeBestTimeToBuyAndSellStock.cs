@@ -1,7 +1,7 @@
 using System;
 
-public class BestTimeToBuyAndSellStock1Time {
-    public BestTimeToBuyAndSellStock1Time() {
+public class OneTimeBestTimeToBuyAndSellStock {
+    public OneTimeBestTimeToBuyAndSellStock() {
         Console.WriteLine("Brute force method result           : {0}",MaxProfit(new int[] {7,6,4,3,1}));
         Console.WriteLine("Dynamic programming method result   : {0}",MaxProfit_DP(new int[] {7,1,5,3,6,4}));
     }

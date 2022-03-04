@@ -3,7 +3,7 @@ using System;
 public class BestTimeToBuyAndSellStock {
     public BestTimeToBuyAndSellStock() {
         Console.WriteLine("Brute force method result           : {0}",MaxProfit(new int[] {7,6,4,3,1}));
-        Console.WriteLine("Dynamic programming method result   : {0}",MaxProfit_DP(new int[] {7,1,5,3,6,4}));
+        Console.WriteLine("Dynamic programming method result   : {0}",MaxProfitForBestTimeToBuyAndSellStock(new int[] {7,6,4,3,1}));
     }
 
     // Brute force approach
@@ -27,5 +27,21 @@ public class BestTimeToBuyAndSellStock {
             maxProfit = Math.Max(maxProfit, prices[i] - minBuy);
         }
         return maxProfit;
+    }
+    // Space O(days * Iteration) Time O(days * Iteration)
+    public int MaxProfitForBestTimeToBuyAndSellStock(int[] prices) {
+        int iteration = prices.Length;
+        int buyTimeProfit = int.MinValue;
+        int[] profit = new int[prices.Length], temp = new int[prices.Length];
+        for(int k = 1; k < iteration; k++) {
+            temp = new int[prices.Length];
+            buyTimeProfit = int.MinValue;
+            for(int d = 1; d < prices.Length; d++) {
+                buyTimeProfit = Math.Max(buyTimeProfit, (-prices[d-1] + profit[d-1]));
+                temp[d] = Math.Max(profit[d-1], prices[d] + buyTimeProfit);
+            }
+            profit = temp;
+        }
+        return profit[profit.Length - 1];
     }
 }

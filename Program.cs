@@ -15,7 +15,7 @@ if (args != null && args.Count() > 0)
             arg = arg.Substring(arg.IndexOf(".")+1);
             // Console.WriteLine(arg);
         }
-        var type = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name.Contains(arg)).FirstOrDefault();
+        var type = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name == arg).FirstOrDefault();
         if(type != null)
             InvokeType(type);
     }
