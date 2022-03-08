@@ -14,5 +14,14 @@ public class JaggedArray {
         Console.WriteLine(jArray[0].Length);
         foreach(var row in jArray)
             Console.WriteLine(string.Join(",", row));
+
+        Console.WriteLine("Print jagged array with some intialized values");
+        InitValueInJaggedArray();
+    }
+    public void InitValueInJaggedArray() {
+        int[][] jArr = Enumerable.Range(0, 4).Select(i => 
+                            Enumerable.Range(0, 4).Select(j=>-1).ToArray()).ToArray();
+        foreach(var row in jArr)
+            Console.WriteLine(string.Join(",", row));
     }
 }
