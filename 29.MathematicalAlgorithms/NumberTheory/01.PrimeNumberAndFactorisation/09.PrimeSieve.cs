@@ -1,13 +1,13 @@
 using System;
 
 public class PrimeSieve {
-    const int N = 1000000;
+    const int N = 10000000;
     bool[] sieve = null;
 
     public PrimeSieve() {
-        sieve = Enumerable.Range(0, N).Select(x => true).ToArray();
+        sieve = Enumerable.Range(0, N+1).Select(x => true).ToArray();
         CreatePrimeSieve();
-        PrintPrimeUptoNum(10000);
+        PrintPrimeUptoNum(10000000);
     }
     public void CreatePrimeSieve() {
         
@@ -15,9 +15,9 @@ public class PrimeSieve {
         sieve[0] = sieve[1] = false;
 
         // Mark from the number 2 to all the ith number multiples are not prime.
-        for(long i = 2; i < N; i++) {
+        for(ulong i = 2; i < N; i++) {
             if(sieve[i]) {
-                for(long j = i*i; j < N; j += i) 
+                for(ulong j = i*i; j < N; j += i) 
                     sieve[j] = false;
             }
         }
