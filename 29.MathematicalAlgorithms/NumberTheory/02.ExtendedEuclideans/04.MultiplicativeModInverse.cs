@@ -1,3 +1,5 @@
+// Multiplicative Modulo Inverse (MMI)
+
 public class MultiplicativeModInverse {
     public MultiplicativeModInverse() {
         int mmi = ModInverse(2,7);
